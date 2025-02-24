@@ -5,6 +5,7 @@ import "fmt"
 type bookmarkMap = map[string]string
 
 func main() {
+
 	bookmarks := bookmarkMap{}
 	fmt.Println("Приложение закладок")
 	for {
@@ -41,19 +42,17 @@ func printBookmarks(bookmarks bookmarkMap) {
 		fmt.Println(key, ":", value)
 	}
 }
-func addBookmark(bookmarks bookmarkMap) bookmarkMap {
+func addBookmark(bookmarks bookmarkMap) {
 	var name, address string
 	fmt.Print("Введите название электронного ресурса: ")
 	fmt.Scan(&name)
 	fmt.Print("Введите адрес электронного ресурса: ")
 	fmt.Scan(&address)
 	bookmarks[name] = address
-	return bookmarks
 }
-func deleteBookmark(bookmarks bookmarkMap) bookmarkMap {
+func deleteBookmark(bookmarks bookmarkMap) {
 	var name string
 	fmt.Print("Введите название электронного ресурса: ")
 	fmt.Scan(&name)
 	delete(bookmarks, name)
-	return bookmarks
 }
